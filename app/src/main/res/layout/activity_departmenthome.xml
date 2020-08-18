@@ -6,76 +6,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/approve"
-            android:layout_width="180dp"
-            android:layout_height="49dp"
-            android:text="Approve Request >"
-            tools:layout_editor_absoluteX="127dp"
-            tools:layout_editor_absoluteY="393dp" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="Logout >"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteY="16dp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome"
-            tools:layout_editor_absoluteX="78dp"
-            tools:layout_editor_absoluteY="30dp" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="49dp"
-            android:layout_height="49dp"
-            app:srcCompat="@drawable/ic_user"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="15dp" />
-
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="157dp"
-            android:layout_height="155dp"
-            app:srcCompat="@drawable/ic_approve"
-            tools:layout_editor_absoluteX="136dp"
-            tools:layout_editor_absoluteY="220dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/approve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Approve Request>"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/approveicon" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
-        app:srcCompat="@drawable/ic_user"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="15dp" />
+        android:id="@+id/approveicon"
+        android:layout_width="157dp"
+        android:layout_height="155dp"
+        android:layout_marginBottom="376dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/ic_approve" />
+
+    <ImageView
+        android:id="@+id/usericon"
+        android:layout_width="43dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/welcome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_user" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome"
+        app:layout_constraintLeft_toRightOf="@id/usericon"
+        app:layout_constraintRight_toBottomOf="parent"
         tools:layout_editor_absoluteX="78dp"
         tools:layout_editor_absoluteY="30dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="4dp"
         android:text="Logout >"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/welcome"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
