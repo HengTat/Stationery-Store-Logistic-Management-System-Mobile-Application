@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inputUsername = (EditText) findViewById(R.id.inputUsername);
-        inputPassword = (EditText) findViewById(R.id.inputPassword);
+        inputUsername = (EditText) findViewById(R.id.usernametextbox);
+        inputPassword = (EditText) findViewById(R.id.passwordtextbox);
         Login = (Button)findViewById(R.id.loginBtn);
 
         SharedPreferences pref = getSharedPreferences("user_account",MODE_PRIVATE);
