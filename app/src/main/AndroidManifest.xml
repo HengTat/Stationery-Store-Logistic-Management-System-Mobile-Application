@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".ClerkHomepage"></activity>
+        <activity android:name=".DepartmentHeadHomepage"></activity>
+        <activity android:name=".EmployeeHomepage"></activity>
+        <activity android:name=".DepartmentRepHomepage"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
