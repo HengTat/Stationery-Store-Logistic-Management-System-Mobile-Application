@@ -128,9 +128,9 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
         requestQueue.add(request);
 
         // Creating adapter for spinner
-        dataAdapter = new ArrayAdapter<String>(this, R.layout.custom_spinner, categoryGroupbyName);
+        dataAdapter = new ArrayAdapter<>(this, R.layout.custom_spinner, categoryGroupbyName);
 
-        // Drop down layout style - list view with radio button
+        // Drop down layout style
         dataAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
         // attaching data adapter to spinner
         spinner1.setAdapter(dataAdapter);
@@ -211,7 +211,7 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
                 public void onErrorResponse(VolleyError error) {
                     // api call failed
                     error.printStackTrace();
-                    Toast.makeText(getApplicationContext(), "Please enter request quantity!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Please enter all fields!", Toast.LENGTH_SHORT).show();
                 }
             }){
             };
