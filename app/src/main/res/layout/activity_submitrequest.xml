@@ -54,10 +54,11 @@
 
     <EditText
         android:id="@+id/requestqty"
-        android:hint="1 - 99"
+        android:hint="1  -  99"
         android:digits="0123456789."
         android:textSize="20sp"
         android:inputType="number"
+        android:gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -19,12 +19,14 @@ public class DepartmentRepHomepage extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deprephome);
 
-        Button btn1 = findViewById(R.id.raiserequest);
+        Button btn1 = findViewById(R.id.depRaiseRequest);
         Button btn2 = findViewById(R.id.acknowledge);
         Name = (TextView)findViewById(R.id.name);
         Logout = (Button)findViewById(R.id.logout);
         Logout.setOnClickListener(this);
 
+        if (btn1 != null)
+            btn1.setOnClickListener(this);
         SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);
         if (pref.contains("name")){
             Name.setText(pref.getString("name", ""));
@@ -35,7 +37,7 @@ public class DepartmentRepHomepage extends AppCompatActivity implements View.OnC
     public void onClick(View v)
     { int id = v.getId();
 
-        if (id == R.id.raiserequest)
+        if (id == R.id.depRaiseRequest)
         {
             Intent intent = new Intent(this, SubmitRequest.class);
             startActivity(intent);
