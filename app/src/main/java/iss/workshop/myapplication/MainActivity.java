@@ -33,7 +33,7 @@ import iss.workshop.myapplication.Model.InventoryItem;
 
 public class MainActivity extends AppCompatActivity {
     //for api testing
-    String server_url = "http://10.0.2.2:5000/api/AccountAPI/";
+    String SERVER_URL = "http://10.0.2.2:5000/api/AccountAPI/";
     //
     EditText inputUsername;
     EditText inputPassword;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, server_url, jsonObject, new Response.Listener<JSONObject>() {
+                    final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, jsonObject, new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
 
