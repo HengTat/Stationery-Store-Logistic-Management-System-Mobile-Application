@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/itemCode"
+        android:textSize="20dp"
+        android:text="Item Code"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+
+        />
+
+    <TextView
+        android:id="@+id/itemDes"
+        android:text="Description"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_width="220dp"
+        />
+
+    <TextView
+        android:id="@+id/itemQty"
+        android:text="Qty"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_width="60dp"
+        />
+
+</LinearLayout>
