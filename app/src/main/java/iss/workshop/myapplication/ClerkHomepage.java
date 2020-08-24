@@ -18,6 +18,7 @@ public class ClerkHomepage extends AppCompatActivity implements View.OnClickList
      {
          super.onCreate(savedInstanceState);
          setContentView(R.layout.activity_clerkhome);
+         getSupportActionBar().setTitle("Clerk Home");
 
          Button btn1 = findViewById(R.id.retrieval);
          Button btn2 = findViewById(R.id.disbursement);

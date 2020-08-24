@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("Login");
 
         inputUsername = (EditText) findViewById(R.id.usernametextbox);
         inputPassword = (EditText) findViewById(R.id.passwordtextbox);
@@ -51,7 +52,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);
         if(pref.contains("id") && pref.contains("role")) {
             String role = pref.getString("role", "");
-            startCorrectActivity(role);
+            if (!(role.equals("ActingHead")))
+                startCorrectActivity(role);
+            else {
+                long delegateExpiration = pref.getLong("delegateExpiration", 0);
+                if (System.currentTimeMillis() < delegateExpiration + 86399999)
+                    startCorrectActivity(role);
+            }
         }
 
             Login.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
                                 int id = response.getInt("id");
                                 String name = response.getString("name");
                                 String role = response.getString("role");
-                                storeUserInSharedPref(id, name, role);
+                                long delegateExpiration = response.getLong("delegateExpiration");
+                                storeUserInSharedPref(id, name, role, delegateExpiration);
                                 startCorrectActivity(role);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -135,12 +143,13 @@ public class MainActivity extends AppCompatActivity {
         finish();
         startActivity(intent);
     }
-    private void storeUserInSharedPref(int id, String name, String role){
+    private void storeUserInSharedPref(int id, String name, String role, long delegateExpiration){
         SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         editor.putInt("id", id);
         editor.putString("name", name);
         editor.putString("role", role);
+        editor.putLong("delegateExpiration", delegateExpiration);
         editor.commit();
     }
 }

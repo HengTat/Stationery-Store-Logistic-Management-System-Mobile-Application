@@ -18,6 +18,7 @@ public class DepartmentHeadHomepage extends AppCompatActivity implements View.On
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_departmentheadhome);
+        getSupportActionBar().setTitle("Department Head Home");
         Name = (TextView)findViewById(R.id.name);
 
         SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);

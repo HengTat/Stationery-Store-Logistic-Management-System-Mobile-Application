@@ -18,6 +18,7 @@ public class EmployeeHomepage extends AppCompatActivity implements View.OnClickL
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employeehome);
+        getSupportActionBar().setTitle("Employee Home");
         Name = (TextView)findViewById(R.id.name);
 
         SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);

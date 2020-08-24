@@ -18,7 +18,7 @@ public class DepartmentRepHomepage extends AppCompatActivity implements View.OnC
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deprephome);
-
+        getSupportActionBar().setTitle("Department Rep Home");
         Button btn1 = findViewById(R.id.depRaiseRequest);
         Button btn2 = findViewById(R.id.acknowledge);
         Name = (TextView)findViewById(R.id.name);
