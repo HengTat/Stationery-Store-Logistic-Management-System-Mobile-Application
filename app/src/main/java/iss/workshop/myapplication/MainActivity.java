@@ -115,11 +115,11 @@ public class MainActivity extends AppCompatActivity {
     private void startCorrectActivity(String role) {
         if (role.equals("Employee"))
             startEmployeeHome();
-        if (role.equals("Store Clerk"))
+        if (role.equals("StoreClerk"))
             startClerkHome();
-        if (role.equals("Department Head") || role.equals("ActingHead"))
+        if (role.equals("DepartmentHead") || role.equals("ActingHead"))
             startDepartmentHeadHome();
-        if (role.equals("Department Rep"))
+        if (role.equals("DepartmentRep"))
             startDepartmentRepHome();
     }
 
