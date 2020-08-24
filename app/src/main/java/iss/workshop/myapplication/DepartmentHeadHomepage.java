@@ -38,7 +38,7 @@ public class DepartmentHeadHomepage extends AppCompatActivity implements View.On
         int id=v.getId();
         if (id == R.id.approve)
         {
-            Intent intent = new Intent(this, ViewRequestDetail.class);
+            Intent intent = new Intent(this, ViewPendingRequests.class);
             startActivity(intent);
         }
         else if (id == R.id.logout)

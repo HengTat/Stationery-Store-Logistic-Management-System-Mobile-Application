@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewRequestDetails">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRequestId"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D1D1D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardViewHeader"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/requestId"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Request ID" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewHeader"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D1D1D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewRequestId"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/header1"
+            android:layout_width="195dp"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/header2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="300dp"
+            android:paddingTop="8dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="8dp"
+            android:text="Qty Requested" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ListView
+        android:id="@+id/pendingRequestsList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewHeader"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/requestdetailsitem" >
+    </ListView>
+
+    <Button
+        android:id="@+id/appprovebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/rejectbtn"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintVertical_bias="0.8"
+        android:text="Approve" />
+
+    <Button
+        android:id="@+id/rejectbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/appprovebtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.8"
+        android:text="Reject" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

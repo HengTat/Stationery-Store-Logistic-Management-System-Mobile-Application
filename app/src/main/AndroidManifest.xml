@@ -11,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClerkHomepage"></activity>
-        <activity android:name=".DepartmentHeadHomepage"></activity>
-        <activity android:name=".EmployeeHomepage"></activity>
-        <activity android:name=".DepartmentRepHomepage"></activity>
-        <activity android:name=".SubmitRequest"></activity>
-        <activity android:name=".ClerkRetrieval"></activity>
+        <activity android:name=".ViewRequestDetails"/>
+        <activity android:name=".ViewPendingRequests" />
+        <activity android:name=".ClerkHomepage"/>
+        <activity android:name=".DepartmentHeadHomepage"/>
+        <activity android:name=".EmployeeHomepage"/>
+        <activity android:name=".DepartmentRepHomepage"/>
+        <activity android:name=".SubmitRequest"/>
+        <activity android:name=".ClerkRetrieval"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

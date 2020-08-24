@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:paddingLeft="16dp"
+            android:text="Description" />
+
+        <TextView
+            android:id="@+id/qtyrequested"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_weight="0"
+            android:paddingRight="16dp"
+            android:text="Qty Requested" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
