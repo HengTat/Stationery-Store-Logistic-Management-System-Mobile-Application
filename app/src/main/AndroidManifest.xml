@@ -16,6 +16,7 @@
         <activity android:name=".EmployeeHomepage"></activity>
         <activity android:name=".DepartmentRepHomepage"></activity>
         <activity android:name=".SubmitRequest"></activity>
+        <activity android:name=".ClerkRetrieval"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

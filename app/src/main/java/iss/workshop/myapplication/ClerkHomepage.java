@@ -24,6 +24,7 @@ public class ClerkHomepage extends AppCompatActivity implements View.OnClickList
          Name = (TextView)findViewById(R.id.name);
          Logout = (Button)findViewById(R.id.logout);
          Logout.setOnClickListener(this);
+         btn1.setOnClickListener(this);
 
          SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);
          if (pref.contains("name")){
