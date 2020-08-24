@@ -29,6 +29,7 @@ public class ViewPendingRequests extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pending_requests);
+        getSupportActionBar().setTitle("Approve Request");
 
         JsonArrayRequest request = new JsonArrayRequest(server_url,
                 new Response.Listener<JSONArray>() {

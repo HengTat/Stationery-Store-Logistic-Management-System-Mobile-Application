@@ -39,6 +39,7 @@ public class ViewRequestDetails extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_request_details);
+        getSupportActionBar().setTitle("Approve Request");
 
         Intent intent = getIntent();
         int requestId = intent.getIntExtra("RequestID", 0);

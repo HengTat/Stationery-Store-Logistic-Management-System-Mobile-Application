@@ -1,5 +1,6 @@
 package iss.workshop.myapplication;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -51,6 +52,7 @@ public class ViewPendingRequestsAdapter extends ArrayAdapter<Request> {
                 Intent intent = new Intent(parent.getContext(), ViewRequestDetails.class);
                 intent.putExtra("RequestID", requestID);
                 parent.getContext().startActivity(intent);
+                ((Activity)parent.getContext()).finish();
             }
         });
 
