@@ -1,23 +1,25 @@
 package iss.workshop.myapplication.Model;
 
-public class DisbursementDetailModel {
-    public int Id;
-    public int QtyNeeded;
-    public int QtyReceived;
-    public int DisbursementId;
-    public String InventoryItemId;
-    public String ItemDescription;
+public class DisbursementDetailAPImodel {
+    public int Id ;
+    public int QtyNeeded ;
+    public int QtyReceived ;
+    public int DisbursementId ;
+    public String InventoryItemId ;
+    public String ItemDescription ;
 
-    public int getQtyReceived() {
-        return QtyReceived;
-    }
-
-    public void setQtyReceived(int qtyReceived) {
+    /*
+    public DisbursementDetailAPImodel(int id, int qtyNeeded, int qtyReceived, int disbursementId, String inventoryItemId,String ItemDescription) {
+        Id = id;
+        QtyNeeded = qtyNeeded;
         QtyReceived = qtyReceived;
+        DisbursementId = disbursementId;
+        InventoryItemId = inventoryItemId;
+        ItemDescription = ItemDescription;
     }
 
-    public DisbursementDetailModel() {
-    }
+
+     */
 
     public int getId() {
         return Id;
@@ -33,6 +35,14 @@ public class DisbursementDetailModel {
 
     public void setQtyNeeded(int qtyNeeded) {
         QtyNeeded = qtyNeeded;
+    }
+
+    public int getQtyReceived() {
+        return QtyReceived;
+    }
+
+    public void setQtyReceived(int qtyReceived) {
+        QtyReceived = qtyReceived;
     }
 
     public int getDisbursementId() {
@@ -58,5 +68,9 @@ public class DisbursementDetailModel {
     public void setItemDescription(String itemDescription) {
         ItemDescription = itemDescription;
     }
+
+
+
+
 
 }

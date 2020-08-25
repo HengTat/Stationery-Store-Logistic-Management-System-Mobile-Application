@@ -24,7 +24,7 @@ public class DepartmentRepHomepage extends AppCompatActivity implements View.OnC
         Name = (TextView)findViewById(R.id.name);
         Logout = (Button)findViewById(R.id.logout);
         Logout.setOnClickListener(this);
-
+        btn2.setOnClickListener(this);
         if (btn1 != null)
             btn1.setOnClickListener(this);
         SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);
@@ -44,7 +44,7 @@ public class DepartmentRepHomepage extends AppCompatActivity implements View.OnC
         }
         else if (id == R.id.acknowledge)
         {
-            Intent intent = new Intent(this, AcknowledgeDisbursement.class);
+            Intent intent = new Intent(this, EmployeeDisbursementList.class);
             startActivity(intent);
         }
         else if (id == R.id.logout)

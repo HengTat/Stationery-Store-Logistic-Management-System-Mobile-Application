@@ -44,7 +44,7 @@ public class ClerkHomepage extends AppCompatActivity implements View.OnClickList
          }
          else if (id == R.id.disbursement)
          {
-             Intent intent = new Intent(this, DisbursementList.class);
+             Intent intent = new Intent(this, ClerkDisbursementList.class);
              startActivity(intent);
          }
          else if (id == R.id.logout)

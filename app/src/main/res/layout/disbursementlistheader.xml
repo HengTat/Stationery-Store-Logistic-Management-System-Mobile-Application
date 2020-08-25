@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtdisId"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_weight="2"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:text="Disbursement ID"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/btnDetail"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:text="Details"
+        android:layout_weight="1"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:background="@android:color/darker_gray"/>
+
+</LinearLayout>
