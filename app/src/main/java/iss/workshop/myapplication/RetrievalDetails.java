@@ -1,10 +1,16 @@
 package iss.workshop.myapplication;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -50,6 +56,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
 
         JsonArrayRequest request=new JsonArrayRequest(server_url,
                 new Response.Listener<JSONArray>() {
+                    @SuppressLint("ResourceType")
                     @Override
                     public void onResponse(JSONArray response) {
 
@@ -59,27 +66,44 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                         TableLayout tblRetDetails = (TableLayout) findViewById(R.id.tblRetDetails);
 
                         TableRow header_row = new TableRow(getApplicationContext());
+                        header_row.setBackgroundResource(R.drawable.border);
                         TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                         header_row.setLayoutParams(lp1);
 
-                        TextView head_itemCode=new TextView(getApplicationContext());
+/*                        TextView head_itemCode=new TextView(getApplicationContext());
                         head_itemCode.setText("Item Code");
-                        header_row.addView(head_itemCode);
+                        head_itemCode.setTextSize(18);
+                        head_itemCode.setTypeface(null, Typeface.BOLD);
+                        head_itemCode.setBackgroundResource(R.drawable.border);
+                        head_itemCode.setGravity(Gravity.CENTER);
+                        header_row.addView(head_itemCode);*/
 
                         TextView head_desc=new TextView(getApplicationContext());
                         head_desc.setText("Description");
+                        head_desc.setTextSize(18);
+                        head_desc.setTypeface(null, Typeface.BOLD);
+                        head_desc.setGravity(Gravity.CENTER);
                         header_row.addView(head_desc);
 
                         TextView head_bin=new TextView(getApplicationContext());
                         head_bin.setText("Bin");
+                        head_bin.setTextSize(18);
+                        head_bin.setTypeface(null, Typeface.BOLD);
+                        head_bin.setGravity(Gravity.CENTER);
                         header_row.addView(head_bin);
 
                         TextView head_qtyNeeded=new TextView(getApplicationContext());
                         head_qtyNeeded.setText("Qty Needed");
+                        head_qtyNeeded.setTextSize(18);
+                        head_qtyNeeded.setTypeface(null, Typeface.BOLD);
+                        head_qtyNeeded.setGravity(Gravity.CENTER);
                         header_row.addView(head_qtyNeeded);
 
                         TextView head_actual=new TextView(getApplicationContext());
                         head_actual.setText("Actual Retrieved");
+                        head_actual.setTextSize(18);
+                        head_actual.setTypeface(null, Typeface.BOLD);
+                        head_actual.setGravity(Gravity.CENTER);
                         header_row.addView(head_actual);
 
                         tblRetDetails.addView(header_row,0);
@@ -87,6 +111,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
 
                         for (int i = 0; i < response.length(); i++) {
                             TableRow row = new TableRow(getApplicationContext());
+                            row.setBackgroundResource(R.drawable.border);
                             TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                             row.setLayoutParams(lp);
 
@@ -102,24 +127,34 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-                            TextView tvItemCode = new TextView(getApplicationContext());
+/*                            TextView tvItemCode = new TextView(getApplicationContext());
                             tvItemCode.setText(itemId);
-                            row.addView(tvItemCode);
+                            tvItemCode.setBackgroundResource(R.drawable.border);
+                            tvItemCode.setGravity(Gravity.CENTER);
+                            row.addView(tvItemCode);*/
 
                             TextView tvDesc = new TextView(getApplicationContext());
                             tvDesc.setText(desc);
+                            tvDesc.setTextSize(16);
+                            tvDesc.setGravity(Gravity.CENTER);
                             row.addView(tvDesc);
 
                             TextView tvBin = new TextView(getApplicationContext());
                             tvBin.setText(bin);
+                            tvBin.setTextSize(16);
+                            tvBin.setGravity(Gravity.CENTER);
                             row.addView(tvBin);
 
                             TextView tvQtyRequested = new TextView(getApplicationContext());
                             tvQtyRequested.setText(String.valueOf(qtyNeeded));
+                            tvQtyRequested.setTextSize(16);
+                            tvQtyRequested.setGravity(Gravity.CENTER);
                             row.addView(tvQtyRequested);
 
                             EditText etActualRetrieved = new EditText(getApplicationContext());
                             etActualRetrieved.setText(Integer.toString(qtyRetrieved));
+                            etActualRetrieved.setTextSize(16);
+                            etActualRetrieved.setGravity(Gravity.CENTER);
                             etActualRetrieved.setId(retId);
                             row.addView(etActualRetrieved);
                             row.setTag(currRetDetId);
@@ -171,18 +206,20 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
             final JsonArrayRequest requestArray=new JsonArrayRequest(Request.Method.POST, base_url, retDetailsArray, new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray response) {
-
+                    Toast.makeText(getApplicationContext(), "Saved Successfully!",Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(RetrievalDetails.this,ClerkRetrieval.class);
+                    finish();
+                    startActivity(intent);
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    Toast.makeText(getApplicationContext(), "Something is wrong. Check the input format!",Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(RetrievalDetails.this,ClerkRetrieval.class);
+                    startActivity(intent);
                 }
             });
             Volley.newRequestQueue(getApplicationContext()).add(requestArray);
-            Intent intent=new Intent(getApplicationContext(), ClerkRetrieval.class);
-            finish();
-            startActivity(intent);
         }
     }
 }

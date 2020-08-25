@@ -1,5 +1,6 @@
 package iss.workshop.myapplication;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -51,7 +52,9 @@ public class RetrievalListAdapter extends ArrayAdapter<Retrieval> {
                 Intent intent=new Intent(parent.getContext(), RetrievalDetails.class);
                 int retId= (int) btnDetails.getTag();
                 intent.putExtra("RetID", retId);
+                ((Activity)parent.getContext()).finish();
                 parent.getContext().startActivity(intent);
+
             }
         });
         return retrievalRow;
