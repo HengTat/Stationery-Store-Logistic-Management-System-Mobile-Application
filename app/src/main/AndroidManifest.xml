@@ -13,7 +13,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ViewRequestDetails"/>
         <activity android:name=".ViewPendingRequests" />
-        <activity android:name=".ClerkHomepage"/>
+        <activity android:name=".ClerkHomepage"></activity>
+        <activity android:name=".DisbursementList"/>
+        <activity android:name=".DisbursementDetails"/>
         <activity android:name=".DepartmentHeadHomepage"/>
         <activity android:name=".EmployeeHomepage"/>
         <activity android:name=".DepartmentRepHomepage"/>

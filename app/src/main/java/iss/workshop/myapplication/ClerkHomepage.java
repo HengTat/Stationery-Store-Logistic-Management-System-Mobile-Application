@@ -26,6 +26,7 @@ public class ClerkHomepage extends AppCompatActivity implements View.OnClickList
          Logout = (Button)findViewById(R.id.logout);
          Logout.setOnClickListener(this);
          btn1.setOnClickListener(this);
+         btn2.setOnClickListener(this);
 
          SharedPreferences pref = getSharedPreferences("loggedInUser",MODE_PRIVATE);
          if (pref.contains("name")){
@@ -43,7 +44,7 @@ public class ClerkHomepage extends AppCompatActivity implements View.OnClickList
          }
          else if (id == R.id.disbursement)
          {
-             Intent intent = new Intent(this, Disbursement.class);
+             Intent intent = new Intent(this, DisbursementList.class);
              startActivity(intent);
          }
          else if (id == R.id.logout)
