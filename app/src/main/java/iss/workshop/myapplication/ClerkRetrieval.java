@@ -3,7 +3,9 @@ package iss.workshop.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,6 +48,8 @@ public class ClerkRetrieval extends AppCompatActivity
 
         getSupportActionBar().setTitle("Retrieval List");
 
+
+
         JsonArrayRequest request=new JsonArrayRequest(server_url,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -56,8 +60,6 @@ public class ClerkRetrieval extends AppCompatActivity
                             try {
                                 JSONObject curr= (JSONObject) response.get(i);
                                 id=curr.getInt("id");
-/*                                dateRetrieved=curr.getString("dateretrieved");
-                                employeeId=curr.getInt("employeeid");*/
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }

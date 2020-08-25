@@ -1,6 +1,7 @@
 package iss.workshop.myapplication;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +30,7 @@ public class RetrievalListAdapter extends ArrayAdapter<Retrieval> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull final ViewGroup parent) {
         View retrievalRow=convertView;
         if(retrievalRow==null){
             retrievalRow= LayoutInflater.from(context).inflate(R.layout.retrieval_row,parent,false);
@@ -43,6 +44,16 @@ public class RetrievalListAdapter extends ArrayAdapter<Retrieval> {
         if(details!=null)
             details.setTag(currRet.getId());
 
+        final Button btnDetails=(Button) retrievalRow.findViewById(R.id.btnDetail);
+        btnDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(parent.getContext(), RetrievalDetails.class);
+                int retId= (int) btnDetails.getTag();
+                intent.putExtra("RetID", retId);
+                parent.getContext().startActivity(intent);
+            }
+        });
         return retrievalRow;
     }
 }

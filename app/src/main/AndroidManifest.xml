@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ViewRequestDetails"/>
         <activity android:name=".ViewPendingRequests" />
-        <activity android:name=".ClerkHomepage"></activity>
+        <activity android:name=".ClerkHomepage"/>
         <activity android:name=".DisbursementList"/>
         <activity android:name=".DisbursementDetails"/>
         <activity android:name=".DepartmentHeadHomepage"/>
@@ -21,6 +21,7 @@
         <activity android:name=".DepartmentRepHomepage"/>
         <activity android:name=".SubmitRequest"/>
         <activity android:name=".ClerkRetrieval"/>
+        <activity android:name=".RetrievalDetails"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
