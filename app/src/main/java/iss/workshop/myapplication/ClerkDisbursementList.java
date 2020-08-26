@@ -67,7 +67,7 @@ public class ClerkDisbursementList extends AppCompatActivity {
                                     List<DisbursementAPImodel> Listofdis=new ArrayList<>();
                                     if (selectedDate !=null){
                                         for (int i=0;i<listofDisbursements.size();i++){
-                                            LocalDate dateofdisbursement=listofDisbursements.get(i).getDisbursedDate().toInstant().atZone(ZoneId.systemDefault()).minusHours(8).toLocalDate();
+                                            LocalDate dateofdisbursement=listofDisbursements.get(i).getDisbursedDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                                             if (dateofdisbursement.equals(selectedDate)){
                                                 Listofdis.add(listofDisbursements.get(i));
                                             }
