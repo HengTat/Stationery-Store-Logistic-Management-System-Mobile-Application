@@ -29,33 +29,31 @@ import java.util.List;
 
 import iss.workshop.myapplication.Model.DisbursementAPImodel;
 
-
 public class ClerkDisbursementList extends AppCompatActivity {
 
     ListView listView;
-    List<DisbursementAPImodel> Listofdisbursements= new ArrayList<>();
+    List<DisbursementAPImodel> listofDisbursements= new ArrayList<>();
     List<Integer> listofdisbursementid= new  ArrayList<Integer>();
-    LocalDate selecteddate;
+    LocalDate selectedDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clerk_disbursement_list);
 
-        //httpget request to listofjavaobject(disbursement)
         //(GET) Retrieve all disbursements
-        String server_url2="http://10.0.2.2:5000/api/disbursementclerkAPI/GetAllDisbursements";
+        String server_url="http://10.0.2.2:5000/api/disbursementclerkAPI/GetAllDisbursements";
 
         JsonArrayRequest request = new JsonArrayRequest
-                (server_url2,
+                (server_url,
                         new Response.Listener<JSONArray>() {
                             @Override
                             public void onResponse(JSONArray response) {
                                 ObjectMapper mapper = new ObjectMapper();
                                 try {
                                     List<DisbursementAPImodel> objects = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementAPImodel>>(){});
-                                    Listofdisbursements=objects;
-                                    for(DisbursementAPImodel i : Listofdisbursements){
+                                    listofDisbursements=objects;
+                                    for(DisbursementAPImodel i : listofDisbursements){
                                         listofdisbursementid.add(i.Id);
                                     }
                                     Intent intent= getIntent();
@@ -63,21 +61,21 @@ public class ClerkDisbursementList extends AppCompatActivity {
 
                                     if (date!=null){
                                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-                                        selecteddate=LocalDate.parse(date,formatter);
+                                        selectedDate=LocalDate.parse(date,formatter);
                                     }
 
                                     List<DisbursementAPImodel> Listofdis=new ArrayList<>();
-                                    if (selecteddate !=null){
-                                        for (int i=0;i<Listofdisbursements.size();i++){
-                                            LocalDate dateofdisbursement=Listofdisbursements.get(i).getDisbursedDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                                            if (dateofdisbursement.equals(selecteddate)){
-                                                Listofdis.add(Listofdisbursements.get(i));
+                                    if (selectedDate !=null){
+                                        for (int i=0;i<listofDisbursements.size();i++){
+                                            LocalDate dateofdisbursement=listofDisbursements.get(i).getDisbursedDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                                            if (dateofdisbursement.equals(selectedDate)){
+                                                Listofdis.add(listofDisbursements.get(i));
                                             }
                                         }
-                                        Listofdisbursements=Listofdis;
+                                        listofDisbursements=Listofdis;
                                     }
 
-                                    DisbursementListAdapter disbursementListAdapter= new DisbursementListAdapter(getApplicationContext(),Listofdisbursements);
+                                    DisbursementListAdapter disbursementListAdapter= new DisbursementListAdapter(getApplicationContext(),listofDisbursements);
                                     listView=(ListView) findViewById(R.id.disbursement_List);
                                     ViewGroup header=(ViewGroup)getLayoutInflater().inflate(R.layout.disbursementlistheaderwithdatepicker,listView,false);
                                     listView.addHeaderView(header);
@@ -98,7 +96,7 @@ public class ClerkDisbursementList extends AppCompatActivity {
                                         }
                                     });
 
-                                    if(Listofdisbursements!=null){
+                                    if(listofDisbursements!=null){
                                         listView.setAdapter(disbursementListAdapter);
                                     }
 
@@ -115,8 +113,4 @@ public class ClerkDisbursementList extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
-
-
-
-
 }

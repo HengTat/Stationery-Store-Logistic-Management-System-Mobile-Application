@@ -23,10 +23,9 @@ import java.util.List;
 
 import iss.workshop.myapplication.Model.DisbursementDetailAPImodel;
 
-
 public class ClerkDisbursementDetail extends AppCompatActivity {
     ListView listView;
-    List<DisbursementDetailAPImodel> Listofdisbursementdetails= new ArrayList<>();
+    List<DisbursementDetailAPImodel> listofDisbursementDetails= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,34 +33,28 @@ public class ClerkDisbursementDetail extends AppCompatActivity {
         setContentView(R.layout.activity_clerk_disbursement_detail);
 
         final String department= getIntent().getStringExtra("Department");
-        int cp= getIntent().getIntExtra("CollectionPoint",0);
-        final String CollectionPoint= String.valueOf(cp);
-        int CurrDisbursementId = getIntent().getIntExtra("DisbursementId", 0);
-        final String tester = String.valueOf(CurrDisbursementId);
+        final String collectionPoint= String.valueOf(getIntent().getIntExtra("CollectionPoint",0));
+        final String disbursementId = String.valueOf(getIntent().getIntExtra("DisbursementId", 0));
 
-        //GET REQUEST
-        //httpget request to listofjavaobject(disbursementdetails)
-        //(GET) Retrieve all disbursementdetails using disbursementid (REMEMBER TO PUT THE LAST NUMBER AS DISBURSEMENT ID)
-        String server_url3="http://10.0.2.2:5000/api/disbursementclerkAPI/Getdisbursementdetails/"+tester;
+        //(GET) Retrieve all disbursementdetails using disbursementid
+        String server_url="http://10.0.2.2:5000/api/disbursementclerkAPI/Getdisbursementdetails/"+disbursementId;
 
         JsonArrayRequest request = new JsonArrayRequest
-                (server_url3,
+                (server_url,
                         new Response.Listener<JSONArray>() {
                             @Override
                             public void onResponse(JSONArray response) {
                                 ObjectMapper mapper = new ObjectMapper();
                                 try {
                                     List<DisbursementDetailAPImodel> objects = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementDetailAPImodel>>(){});
-                                    Listofdisbursementdetails=objects;
-
-                                    DisbursementDetailAdapter disbursementdetailAdapter= new DisbursementDetailAdapter(getApplicationContext(),Listofdisbursementdetails);
+                                    listofDisbursementDetails=objects;
+                                    DisbursementDetailAdapter disbursementdetailAdapter= new DisbursementDetailAdapter(getApplicationContext(),listofDisbursementDetails);
                                     listView=(ListView) findViewById(R.id.disbursementdetail_List);
-
 
                                     ViewGroup header=(ViewGroup)getLayoutInflater().inflate(R.layout.disbursementdetailheader,listView,false);
                                     TextView IDdisplay= (TextView) header.findViewById(R.id.disbursementidbox) ;
                                     if(IDdisplay!=null){
-                                        IDdisplay.setText(tester);
+                                        IDdisplay.setText(disbursementId);
                                     }
 
                                     TextView Departmentdisplay= (TextView) header.findViewById(R.id.departmentbox) ;
@@ -70,13 +63,12 @@ public class ClerkDisbursementDetail extends AppCompatActivity {
                                     }
                                     TextView CollectionPointdisplay= (TextView) header.findViewById(R.id.collectionpointbox) ;
                                     if(IDdisplay!=null) {
-                                        CollectionPointdisplay.setText(CollectionPoint);
+                                        CollectionPointdisplay.setText(collectionPoint);
                                     }
                                     listView.addHeaderView(header);
-                                    if(Listofdisbursementdetails!=null){
+                                    if(listofDisbursementDetails!=null){
                                         listView.setAdapter(disbursementdetailAdapter);
                                     }
-
                                 } catch (JsonProcessingException e) {
                                     e.printStackTrace();
                                 }
@@ -89,9 +81,6 @@ public class ClerkDisbursementDetail extends AppCompatActivity {
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
-
-
-
     }
 }
 

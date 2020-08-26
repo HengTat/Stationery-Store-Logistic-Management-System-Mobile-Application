@@ -6,31 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/itemcodebox2"
-        android:layout_width="66dp"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="Item code box"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <TextView
-        android:id="@+id/descriptionbox2"
-        android:layout_width="123dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="Description Box"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
 
     <TextView
         android:id="@+id/qtybox2"
@@ -40,16 +15,41 @@
         android:text="QTY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.669"
+        app:layout_constraintHorizontal_bias="0.672"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.032" />
 
+    <TextView
+        android:id="@+id/itemcodebox2"
+        android:layout_width="66dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Item code box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029" />
+
+    <TextView
+        android:id="@+id/descriptionbox2"
+        android:layout_width="123dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="Description Box"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
 
     <EditText
         android:id="@+id/receivedqtybox2"
-        android:layout_width="86dp"
-        android:layout_height="66dp"
+        android:layout_width="85dp"
+        android:layout_height="53dp"
         android:gravity="center"
         android:text="receivedqty"
         app:layout_constraintBottom_toBottomOf="parent"

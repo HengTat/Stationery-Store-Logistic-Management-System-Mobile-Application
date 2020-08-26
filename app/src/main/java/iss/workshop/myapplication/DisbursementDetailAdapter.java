@@ -15,45 +15,43 @@ import java.util.List;
 
 import iss.workshop.myapplication.Model.DisbursementDetailAPImodel;
 
-
 public class DisbursementDetailAdapter extends ArrayAdapter<DisbursementDetailAPImodel> {
     Context context;
-    private List<DisbursementDetailAPImodel> Listofdisbursementdetail = new ArrayList<DisbursementDetailAPImodel>();
+    private List<DisbursementDetailAPImodel> listofDisbursementDetail = new ArrayList<DisbursementDetailAPImodel>();
 
-    public DisbursementDetailAdapter(@NonNull Context context, List<DisbursementDetailAPImodel> Listofdisbursementdetail) {
-        super(context, 0, Listofdisbursementdetail);
+    public DisbursementDetailAdapter(@NonNull Context context, List<DisbursementDetailAPImodel> listofDisbursementDetail) {
+        super(context, 0, listofDisbursementDetail);
         this.context = context;
-        this.Listofdisbursementdetail =  Listofdisbursementdetail;
+        this.listofDisbursementDetail =  listofDisbursementDetail;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View retrievalRow = convertView;
-        if (retrievalRow == null) {
-            retrievalRow = LayoutInflater.from(context).inflate(R.layout.disbursementdetail_row, parent, false);
+        View disbursementDetailRow = convertView;
+        if (disbursementDetailRow == null) {
+            disbursementDetailRow  = LayoutInflater.from(context).inflate(R.layout.disbursementdetail_row, parent, false);
         }
-        final DisbursementDetailAPImodel currdisdetail = Listofdisbursementdetail.get(position);
+        final DisbursementDetailAPImodel currdisdetail = listofDisbursementDetail.get(position);
 
-        TextView itemcode= (TextView) retrievalRow.findViewById(R.id.itemcodebox);
+        TextView itemcode= (TextView) disbursementDetailRow .findViewById(R.id.itemcodebox);
         if(itemcode!=null){
             itemcode.setText(currdisdetail.getInventoryItemId());
         }
 
-        TextView Description= (TextView) retrievalRow.findViewById(R.id.descriptionbox);
+        TextView Description= (TextView) disbursementDetailRow .findViewById(R.id.descriptionbox);
         if(Description!=null){
             Description.setText(currdisdetail.getItemDescription());
         }
-        TextView qty= (TextView) retrievalRow.findViewById(R.id.qtybox);
+        TextView qty= (TextView) disbursementDetailRow .findViewById(R.id.qtybox);
         if(qty!=null){
             qty.setText(String.valueOf(currdisdetail.getQtyNeeded()));
         }
 
-        TextView receivedqty= (TextView) retrievalRow.findViewById(R.id.receivedqtybox);
+        TextView receivedqty= (TextView) disbursementDetailRow .findViewById(R.id.receivedqtybox);
         if(receivedqty!=null){
                 receivedqty.setText(String.valueOf(currdisdetail.getQtyReceived()));
         }
-
-        return retrievalRow;
+        return disbursementDetailRow ;
     }
 }

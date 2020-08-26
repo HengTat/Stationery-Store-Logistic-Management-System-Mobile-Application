@@ -23,12 +23,10 @@ import java.util.List;
 
 import iss.workshop.myapplication.Model.DisbursementAPImodel;
 
-
 public class EmployeeDisbursementList extends AppCompatActivity {
     ListView listView;
-    List<DisbursementAPImodel> Listofdisbursements = new ArrayList<>();
-    List<Integer> listofdisbursementid = new ArrayList<Integer>();
-
+    List<DisbursementAPImodel> listofDisbursements = new ArrayList<>();
+    List<Integer> listofDisbursementId = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +38,9 @@ public class EmployeeDisbursementList extends AppCompatActivity {
             CurrentEmployeeid = String.valueOf(pref.getInt("id",0));
 
             //(GET) Retrieve all disbursements using employeeid
-            String server_url4 = "http://10.0.2.2:5000/api/disbursementemployeeAPI/GetAllDisbursements/"+CurrentEmployeeid;
+            String server_url = "http://10.0.2.2:5000/api/disbursementemployeeAPI/GetAllDisbursements/"+CurrentEmployeeid;
             JsonArrayRequest request = new JsonArrayRequest
-                    (server_url4,
+                    (server_url,
                             new Response.Listener<JSONArray>() {
                                 @Override
                                 public void onResponse(JSONArray response) {
@@ -50,16 +48,16 @@ public class EmployeeDisbursementList extends AppCompatActivity {
                                     try {
                                         List<DisbursementAPImodel> objects = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementAPImodel>>() {
                                         });
-                                        Listofdisbursements = objects;
-                                        for (DisbursementAPImodel i : Listofdisbursements) {
-                                            listofdisbursementid.add(i.Id);
+                                        listofDisbursements = objects;
+                                        for (DisbursementAPImodel i : listofDisbursements) {
+                                            listofDisbursementId.add(i.Id);
                                         }
 
-                                        DisbursementListEmployeeAdapter disbursementListEmployeeAdapter = new DisbursementListEmployeeAdapter(getApplicationContext(), Listofdisbursements);
+                                        DisbursementListEmployeeAdapter disbursementListEmployeeAdapter = new DisbursementListEmployeeAdapter(getApplicationContext(), listofDisbursements);
                                         listView = (ListView) findViewById(R.id.disbursement_List);
                                         ViewGroup header = (ViewGroup) getLayoutInflater().inflate(R.layout.disbursementlistheader, listView, false);
                                         listView.addHeaderView(header);
-                                        if (Listofdisbursements != null) {
+                                        if (listofDisbursements != null) {
                                             listView.setAdapter(disbursementListEmployeeAdapter);
                                         }
 
@@ -75,8 +73,6 @@ public class EmployeeDisbursementList extends AppCompatActivity {
                     });
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             requestQueue.add(request);
-
-
         }
     }
 }

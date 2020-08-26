@@ -17,30 +17,29 @@ import java.util.List;
 
 import iss.workshop.myapplication.Model.DisbursementAPImodel;
 
-
 public class DisbursementListAdapter extends ArrayAdapter<DisbursementAPImodel> {
     Context context;
-    private List<DisbursementAPImodel> Listofdisbursement = new ArrayList<DisbursementAPImodel>();
+    private List<DisbursementAPImodel> listofDisbursement = new ArrayList<DisbursementAPImodel>();
 
-    public DisbursementListAdapter(@NonNull Context context, List<DisbursementAPImodel> Listofdisbursement) {
-        super(context, 0, Listofdisbursement);
+    public DisbursementListAdapter(@NonNull Context context, List<DisbursementAPImodel> listofDisbursement) {
+        super(context, 0, listofDisbursement);
         this.context = context;
-        this.Listofdisbursement =  Listofdisbursement;
+        this.listofDisbursement =  listofDisbursement;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View retrievalRow = convertView;
-        if (retrievalRow == null) {
-            retrievalRow = LayoutInflater.from(context).inflate(R.layout.disbursement_row, parent, false);
+        View disbursementRow = convertView;
+        if (disbursementRow  == null) {
+            disbursementRow = LayoutInflater.from(context).inflate(R.layout.disbursement_row, parent, false);
         }
-        final DisbursementAPImodel currdis = Listofdisbursement.get(position);
-        TextView DisbursementId = (TextView) retrievalRow.findViewById(R.id.disbursemetIdtext);
+        final DisbursementAPImodel currdis = listofDisbursement.get(position);
+        TextView DisbursementId = (TextView) disbursementRow .findViewById(R.id.disbursemetIdtext);
         if (DisbursementId != null)
             DisbursementId.setText(Integer.toString(currdis.getId()));
 
-        Button details = (Button) retrievalRow.findViewById(R.id.viewDetailbtn);
+        Button details = (Button) disbursementRow .findViewById(R.id.viewDetailbtn);
         if (details != null){
             details.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -54,7 +53,6 @@ public class DisbursementListAdapter extends ArrayAdapter<DisbursementAPImodel> 
                 }
             });
         }
-
-        return retrievalRow;
+        return disbursementRow ;
     }
 }
