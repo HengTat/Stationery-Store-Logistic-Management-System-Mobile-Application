@@ -45,6 +45,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrieval_details);
+        getSupportActionBar().setTitle("Clerk Retrieval Form");
 
         Button btnSubmit=findViewById(R.id.btnSubmit);
         btnSubmit.setOnClickListener(this);
@@ -66,7 +67,6 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                         TableLayout tblRetDetails = (TableLayout) findViewById(R.id.tblRetDetails);
 
                         TableRow header_row = new TableRow(getApplicationContext());
-                        header_row.setBackgroundResource(R.drawable.border);
                         TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                         header_row.setLayoutParams(lp1);
 
@@ -79,28 +79,25 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                         header_row.addView(head_itemCode);*/
 
                         TextView head_desc=new TextView(getApplicationContext());
-                        head_desc.setText("Description");
+
                         head_desc.setTextSize(18);
                         head_desc.setTypeface(null, Typeface.BOLD);
                         head_desc.setGravity(Gravity.CENTER);
                         header_row.addView(head_desc);
 
                         TextView head_bin=new TextView(getApplicationContext());
-                        head_bin.setText("Bin");
                         head_bin.setTextSize(18);
                         head_bin.setTypeface(null, Typeface.BOLD);
                         head_bin.setGravity(Gravity.CENTER);
                         header_row.addView(head_bin);
 
                         TextView head_qtyNeeded=new TextView(getApplicationContext());
-                        head_qtyNeeded.setText("Qty Needed");
                         head_qtyNeeded.setTextSize(18);
                         head_qtyNeeded.setTypeface(null, Typeface.BOLD);
                         head_qtyNeeded.setGravity(Gravity.CENTER);
                         header_row.addView(head_qtyNeeded);
 
                         TextView head_actual=new TextView(getApplicationContext());
-                        head_actual.setText("Actual Retrieved");
                         head_actual.setTextSize(18);
                         head_actual.setTypeface(null, Typeface.BOLD);
                         head_actual.setGravity(Gravity.CENTER);
@@ -111,7 +108,6 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
 
                         for (int i = 0; i < response.length(); i++) {
                             TableRow row = new TableRow(getApplicationContext());
-                            row.setBackgroundResource(R.drawable.border);
                             TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                             row.setLayoutParams(lp);
 
