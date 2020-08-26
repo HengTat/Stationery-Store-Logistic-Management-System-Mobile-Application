@@ -47,7 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:background="#32CD32"
+        android:textColor="	#FFFFFF"
         android:text="Submit"></Button>
-
 
 </LinearLayout>

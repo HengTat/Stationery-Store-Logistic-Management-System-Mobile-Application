@@ -72,8 +72,8 @@
 
     <Button
         android:id="@+id/appprovebtn"
-        android:background="@android:color/holo_green_light"
-        android:textColor="@android:color/white"
+        android:background="#32CD32"
+        android:textColor="	#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
