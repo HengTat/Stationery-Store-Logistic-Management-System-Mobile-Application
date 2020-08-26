@@ -27,11 +27,13 @@ public class EmployeeDisbursementList extends AppCompatActivity {
     ListView listView;
     List<DisbursementAPImodel> listofDisbursements = new ArrayList<>();
     List<Integer> listofDisbursementId = new ArrayList<Integer>();
+    static EmployeeDisbursementList employeeDisbursementList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_disbursement_list);
+        employeeDisbursementList=this;
         String CurrentEmployeeid;
         SharedPreferences pref = getSharedPreferences("loggedInUser", MODE_PRIVATE);
         if (pref.contains("id") && pref.contains("role")) {
@@ -46,9 +48,9 @@ public class EmployeeDisbursementList extends AppCompatActivity {
                                 public void onResponse(JSONArray response) {
                                     ObjectMapper mapper = new ObjectMapper();
                                     try {
-                                        List<DisbursementAPImodel> objects = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementAPImodel>>() {
+                                        listofDisbursements = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementAPImodel>>() {
                                         });
-                                        listofDisbursements = objects;
+
                                         for (DisbursementAPImodel i : listofDisbursements) {
                                             listofDisbursementId.add(i.Id);
                                         }
@@ -74,5 +76,10 @@ public class EmployeeDisbursementList extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             requestQueue.add(request);
         }
+
+
+    }
+    public static EmployeeDisbursementList getInstance(){
+        return employeeDisbursementList;
     }
 }

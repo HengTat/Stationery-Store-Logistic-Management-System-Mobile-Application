@@ -1,7 +1,9 @@
 package iss.workshop.myapplication;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,6 +52,7 @@ public class DisbursementListEmployeeAdapter  extends ArrayAdapter<DisbursementA
                     intent.putExtra("CollectionPoint",currdis.getCollectionPointId());
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.startActivity(intent);
+
                 }
             });
         }

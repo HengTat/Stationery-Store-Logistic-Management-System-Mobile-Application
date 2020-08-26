@@ -46,8 +46,8 @@ public class ClerkDisbursementDetail extends AppCompatActivity {
                             public void onResponse(JSONArray response) {
                                 ObjectMapper mapper = new ObjectMapper();
                                 try {
-                                    List<DisbursementDetailAPImodel> objects = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementDetailAPImodel>>(){});
-                                    listofDisbursementDetails=objects;
+                                    listofDisbursementDetails = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementDetailAPImodel>>(){});
+
                                     DisbursementDetailAdapter disbursementdetailAdapter= new DisbursementDetailAdapter(getApplicationContext(),listofDisbursementDetails);
                                     listView=(ListView) findViewById(R.id.disbursementdetail_List);
 
@@ -59,7 +59,7 @@ public class ClerkDisbursementDetail extends AppCompatActivity {
 
                                     TextView Departmentdisplay= (TextView) header.findViewById(R.id.departmentbox) ;
                                     if(IDdisplay!=null){
-                                       Departmentdisplay.setText(department);
+                                        Departmentdisplay.setText(department);
                                     }
                                     TextView CollectionPointdisplay= (TextView) header.findViewById(R.id.collectionpointbox) ;
                                     if(IDdisplay!=null) {

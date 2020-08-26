@@ -1,5 +1,7 @@
 package iss.workshop.myapplication;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -43,10 +45,12 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
     ListView listView;
     List<DisbursementDetailAPImodel> listofDisbursementDetails= new ArrayList<>();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_employee_disbursement_detail);
+
 
         final String department= getIntent().getStringExtra("Department");
         final String collectionPoint= String.valueOf(getIntent().getIntExtra("CollectionPoint",0));
@@ -62,8 +66,7 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                             public void onResponse(JSONArray response) {
                                 ObjectMapper mapper = new ObjectMapper();
                                 try {
-                                    List<DisbursementDetailAPImodel> objects = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementDetailAPImodel>>(){});
-                                    listofDisbursementDetails=objects;
+                                    listofDisbursementDetails = mapper.readValue(String.valueOf(response), new TypeReference<List<DisbursementDetailAPImodel>>(){});
 
                                     DisbursementDetailEmployeeAdapter disbursementDetailEmployeeAdapter= new DisbursementDetailEmployeeAdapter(getApplicationContext(),listofDisbursementDetails);
                                     listView=(ListView) findViewById(R.id.disbursementdetail_List);
@@ -73,7 +76,6 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                                     if(IDdisplay!=null){
                                         IDdisplay.setText(disbursementId);
                                     }
-
                                     TextView Departmentdisplay= (TextView) header.findViewById(R.id.departmentbox) ;
                                     if(IDdisplay!=null){
                                         Departmentdisplay.setText(department);
@@ -96,23 +98,22 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                                         @Override
                                         public void onClick(View view) {
 
-                                            List<Integer> Listofreceivedqty= new ArrayList<>();
+                                            List<Integer> listofReceivedQty= new ArrayList<>();
                                             for (int a = 1; a < listView.getCount()-1; a++) {
                                                 EditText et = (EditText) listView.getChildAt(a).findViewById(R.id.receivedqtybox2);
-                                                Listofreceivedqty.add(Integer.parseInt(et.getText().toString()));
+                                                listofReceivedQty.add(Integer.parseInt(et.getText().toString()));
                                             }
 
                                             for(int p=0; p <listofDisbursementDetails.size();p++){
                                                 DisbursementDetailAPImodel dd = listofDisbursementDetails.get(p);
-                                                dd.setQtyReceived(Listofreceivedqty.get(p));
+                                                dd.setQtyReceived(listofReceivedQty.get(p));
                                                 listofDisbursementDetails.set(p,dd);
                                             }
 
                                             //(PUT) Update all disbursementdetails , Insert json body with disbursementdetails to be updated
                                             String server_url6="http://10.0.2.2:5000/api/disbursementemployeeAPI/updatedisbursementdetails/";
-                                            List<DisbursementDetailAPImodel> Listoftestobjects= listofDisbursementDetails;
                                             JSONArray jsonarray= new JSONArray();
-                                            for (DisbursementDetailAPImodel dd : Listoftestobjects){
+                                            for (DisbursementDetailAPImodel dd : listofDisbursementDetails){
                                                 JSONObject obj= new JSONObject();
                                                 try {
                                                     obj.put("id",dd.getId());
@@ -170,15 +171,19 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                                             RequestQueue requestQueue = Volley.newRequestQueue(EmployeeDisbursementDetail.this);
                                             requestQueue.add(postRequest);
 
-                                            Toast.makeText(getApplicationContext(), "Disbursement has been confirmed !", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(), "Disbursement has been confirmed !", Toast.LENGTH_LONG).show();
+                                            EmployeeDisbursementList.getInstance().finish();
+
+
                                             final Handler handler = new Handler();
                                             handler.postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
                                                     Intent i = new Intent(EmployeeDisbursementDetail.this,EmployeeDisbursementList.class);
                                                     startActivity(i);
+                                                    ((Activity)EmployeeDisbursementDetail.this).finish();
                                                 }
-                                            }, 1000);
+                                            }, 1200);
                                         }
                                     });
                                 } catch (JsonProcessingException e) {

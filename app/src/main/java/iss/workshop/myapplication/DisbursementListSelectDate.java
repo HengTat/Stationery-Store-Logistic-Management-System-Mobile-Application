@@ -1,5 +1,6 @@
 package iss.workshop.myapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,10 +24,11 @@ public class DisbursementListSelectDate extends AppCompatActivity {
         confirmDateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               String selectedDate1=String.valueOf(LocalDate.of(picker.getYear(),picker.getMonth()+1,picker.getDayOfMonth()));
+                String selectedDate1=String.valueOf(LocalDate.of(picker.getYear(),picker.getMonth()+1,picker.getDayOfMonth()));
                 Intent i = new Intent(DisbursementListSelectDate.this,ClerkDisbursementList.class);
                 i.putExtra("selecteddate",selectedDate1);
                 startActivity(i);
+                finish();
             }
         });
         cancelDateBtn.setOnClickListener(new View.OnClickListener() {
