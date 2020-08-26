@@ -1,6 +1,7 @@
 package iss.workshop.myapplication;
 
 import android.content.Context;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +52,7 @@ public class DisbursementDetailEmployeeAdapter extends ArrayAdapter<Disbursement
         TextView receivedqty= (TextView) disbursementDetailRow.findViewById(R.id.receivedqtybox2);
         if(receivedqty!=null){
             String test=receivedqty.getText().toString();
+            receivedqty.setInputType(InputType.TYPE_CLASS_NUMBER);
             if(receivedqty.getText().toString().equals("receivedqty") ) {
                 receivedqty.setText(String.valueOf(currdisdetail.getQtyNeeded()));
             }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,6 +149,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                             row.addView(tvQtyRequested);
 
                             EditText etActualRetrieved = new EditText(getApplicationContext());
+                            etActualRetrieved.setInputType(InputType.TYPE_CLASS_NUMBER);
                             etActualRetrieved.setText(Integer.toString(qtyRetrieved));
                             etActualRetrieved.setTextSize(16);
                             etActualRetrieved.setGravity(Gravity.CENTER);
