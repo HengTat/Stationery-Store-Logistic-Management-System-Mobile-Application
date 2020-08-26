@@ -186,11 +186,12 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                 TableRow tableRow=(TableRow)table.getChildAt(i);
 
                 TextView txtRet=findViewById(R.id.txtRetId);
-                EditText actualCol=(EditText)tableRow.getChildAt(4);
+                EditText actualCol=(EditText)tableRow.getChildAt(3);
                 int retrieveId=Integer.parseInt(txtRet.getText().toString());
                 int retDetailsId= (int) tableRow.getTag();
-                int actualRetrieved=Integer.parseInt(actualCol.getText().toString());
-                int toTest=actualRetrieved;
+                String stringActualQty=actualCol.getText().toString();
+                int actualRetrieved=Integer.parseInt(stringActualQty);
+
 
                 JSONObject jsonObject=new JSONObject();
                 try {
