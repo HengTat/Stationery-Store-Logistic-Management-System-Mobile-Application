@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -23,6 +24,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -112,10 +114,6 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
                                 for(String name: categorylistGrouped.keySet()) {
                                     categoryGroupbyName.add(name);
                                 }
-                                /*filteredListrest = categoryList.stream().filter(distinctByKey(p->p.getId())).collect(Collectors.toList());
-                                filteredListall =  Stream.concat(filteredListzero.stream(), filteredListrest.stream())
-                                        .collect(Collectors.toList());*/
-
                             }
                         }, new Response.ErrorListener() {
                     @Override
@@ -127,14 +125,11 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
 
-        // Creating adapter for spinner
+
+
         dataAdapter = new ArrayAdapter<>(this, R.layout.custom_spinner, categoryGroupbyName);
-
-        // Drop down layout style
         dataAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
-        // attaching data adapter to spinner
         spinner1.setAdapter(dataAdapter);
-
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -156,16 +151,12 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
                     childAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.custom_spinner, matchCategoryItems);
                     childAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
                     spinner2.setAdapter(childAdapter);
-
                     Toast.makeText(adapterView.getContext(), "Selected: " + name, Toast.LENGTH_SHORT).show();
-
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                // TODO Auto-generated method stub
-
             }
         });
 
@@ -198,12 +189,12 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL_POST, jsonObject, new Response.Listener<JSONObject>() {
+
+
+            final JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL_POST, jsonObject,
+                    new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
-                        Toast.makeText(getApplicationContext(), "Your request has been submitted successfully!", Toast.LENGTH_SHORT).show();
-                    startEmployeeHome();
-
 
                 }
             }, new Response.ErrorListener() {
@@ -215,7 +206,23 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
                 }
             }){
             };
-            Volley.newRequestQueue(this).add(jsonObjectRequest);
+
+                jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(
+                        0,
+                        DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                        DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+                Volley.newRequestQueue(this).add(jsonObjectRequest);
+
+                final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(SubmitRequest.this,LoadingRequestSubmission.class);
+                        startActivity(i);
+                        ((Activity)SubmitRequest.this).finish();
+                    }
+                }, 1800);
         }catch (Exception e){
                 Toast.makeText(getApplicationContext(), "Please select an item!", Toast.LENGTH_SHORT).show();
             }
@@ -233,9 +240,5 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
         return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
         }
 
-    private void startEmployeeHome() {
-        Intent intent = new Intent(this, EmployeeHomepage.class);
-        finish();
-        startActivity(intent);
-    }
+
 }

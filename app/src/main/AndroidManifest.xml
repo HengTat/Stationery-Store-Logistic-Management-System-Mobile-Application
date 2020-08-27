@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".loadingforacknowledgement"></activity>
+        <activity android:name=".LoadingRequestSubmission"></activity>
+        <activity android:name=".loadingforacknowledgement" />
         <activity android:name=".ViewRequestDetails" />
         <activity android:name=".ViewPendingRequests" />
         <activity android:name=".ClerkHomepage" />
