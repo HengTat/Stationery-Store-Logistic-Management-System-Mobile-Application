@@ -68,7 +68,8 @@
         app:layout_constraintLeft_toRightOf="@id/welcome"
         app:layout_constraintVertical_bias="0.04"
         tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="29dp" />
+        tools:layout_editor_absoluteY="29dp"
+        android:textColor="@android:color/white"/>
 
     <ImageView
         android:id="@+id/usericon"

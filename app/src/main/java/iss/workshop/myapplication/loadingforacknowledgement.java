@@ -30,7 +30,7 @@ public class loadingforacknowledgement extends AppCompatActivity {
                 animation1.playAnimation();
                 animation1.loop(false);
             }
-        }, 8100);
+        }, 9000);
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -39,7 +39,7 @@ public class loadingforacknowledgement extends AppCompatActivity {
                 finish();
                 startActivity(i);
             }
-        }, 10000);
+        }, 11000);
 
 
     }

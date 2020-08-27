@@ -183,7 +183,7 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                                                     startActivity(i);
                                                     ((Activity)EmployeeDisbursementDetail.this).finish();
                                                 }
-                                            }, 1800);
+                                            }, 1000);
                                         }
                                     });
                                 } catch (JsonProcessingException e) {
