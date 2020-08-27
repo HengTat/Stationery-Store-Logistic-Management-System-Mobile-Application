@@ -6,6 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/homepageheader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/requesticon"
         android:layout_width="133dp"
@@ -23,6 +30,7 @@
         android:id="@+id/welcome"
         tools:layout_editor_absoluteX="75dp"
         tools:layout_editor_absoluteY="29dp"
+        android:textColor="@android:color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/usericon"
