@@ -27,7 +27,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="Retrieval Form   >"
+        android:text="Retrieval Form>"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="283dp" />
 
@@ -36,6 +38,8 @@
         android:layout_width="180dp"
         android:layout_height="49dp"
         android:text="Disbursement Form >"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -71,6 +75,8 @@
 
     <Button
         android:id="@+id/logout"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteY="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

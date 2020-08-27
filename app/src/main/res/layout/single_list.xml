@@ -19,10 +19,13 @@
 
         <Button
             android:id="@+id/detailBtn"
+            android:background="@android:color/holo_orange_dark"
+            android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View Details"
             android:textSize="15dp" />
+
 
     </LinearLayout>
 </LinearLayout>

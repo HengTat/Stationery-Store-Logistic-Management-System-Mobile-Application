@@ -59,6 +59,8 @@
 
     <Button
         android:id="@+id/logout"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteY="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,6 +75,8 @@
 
     <Button
         android:id="@+id/depRaiseRequest"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="283dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -100,6 +104,8 @@
         android:id="@+id/acknowledge"
         android:layout_width="258dp"
         android:layout_height="58dp"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         android:text="Acknowledge Disbursement >"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

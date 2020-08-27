@@ -14,11 +14,14 @@
         android:background="@android:color/darker_gray"
         android:gravity="center_vertical"
         android:text="   Disbursement ID"
+
         android:textSize="25sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/pickdatebtn"
+        android:background="@android:color/holo_green_light"
+        android:textColor="@android:color/white"
         android:layout_width="147dp"
         android:layout_height="44dp"
         android:text="Pick Date"

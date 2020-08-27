@@ -8,10 +8,12 @@
 
     <Button
         android:id="@+id/approve"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Approve Request >"
+        android:background="@android:color/holo_blue_dark"
+        android:textColor="@android:color/white"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -67,6 +69,8 @@
 
     <Button
         android:id="@+id/logout"
+        android:background="@android:color/holo_orange_light"
+        android:textColor="@android:color/white"
         tools:layout_editor_absoluteY="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
