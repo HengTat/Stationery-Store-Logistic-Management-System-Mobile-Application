@@ -10,11 +10,19 @@
         android:id="@+id/headerbox"
         android:layout_width="match_parent"
         android:layout_height="38dp"
-        android:background="#949494"
+        android:background="@android:color/holo_blue_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerbox2"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#D3D3D3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/headerbox2"

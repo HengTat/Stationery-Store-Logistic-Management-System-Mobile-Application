@@ -20,9 +20,12 @@
             android:id="@+id/requestdetailsbtn"
             android:background="@drawable/button_view_details"
             android:textColor="@android:color/white"
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:text="View Details" />
+            android:text="View Details"
+            android:drawableStart="@drawable/ic_baseline_format_list_bulleted_24"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

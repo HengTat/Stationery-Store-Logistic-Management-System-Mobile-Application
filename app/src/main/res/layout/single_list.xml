@@ -23,6 +23,9 @@
             android:textColor="@android:color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_baseline_format_list_bulleted_24"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
             android:text="View Details"
             android:textSize="15dp" />
 
