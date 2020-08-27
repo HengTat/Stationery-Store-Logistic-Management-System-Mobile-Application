@@ -13,7 +13,7 @@
 
     <Button
         android:id="@+id/btnDetail"
-        android:background="@android:color/holo_orange_dark"
+        android:background="@drawable/button_view_details"
         android:textColor="@android:color/white"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

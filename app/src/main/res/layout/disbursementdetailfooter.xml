@@ -24,7 +24,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="Acknowledge Disbursement"
-        android:background="#32CD32"
+        android:background="@drawable/button_submissions"
         android:textColor="	#FFFFFF"
         app:layout_constraintTop_toTopOf="@id/footerbox"
         app:layout_constraintBottom_toBottomOf="@id/footerbox"

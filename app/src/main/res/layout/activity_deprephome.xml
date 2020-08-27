@@ -59,7 +59,7 @@
 
     <Button
         android:id="@+id/logout"
-        android:background="@android:color/holo_orange_light"
+        android:background="@drawable/button_view_details"
         android:textColor="@android:color/white"
         tools:layout_editor_absoluteY="16dp"
         android:layout_width="wrap_content"
@@ -70,12 +70,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="0.02"
-        android:text="Logout >"
+        android:text="Logout"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/depRaiseRequest"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/button_functions"
         android:textColor="@android:color/white"
         tools:layout_editor_absoluteX="115dp"
         tools:layout_editor_absoluteY="283dp"
@@ -86,7 +86,7 @@
         app:layout_constraintVertical_bias="0.4"
         android:layout_width="180dp"
         android:layout_height="49dp"
-        android:text="Raise Request   >" />
+        android:text="Raise Request " />
 
     <View
         android:id="@+id/divider"
@@ -104,9 +104,9 @@
         android:id="@+id/acknowledge"
         android:layout_width="258dp"
         android:layout_height="58dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/button_functions"
         android:textColor="@android:color/white"
-        android:text="Acknowledge Disbursement >"
+        android:text="Acknowledge Disbursement "
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"

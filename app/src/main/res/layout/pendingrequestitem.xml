@@ -18,9 +18,9 @@
 
         <Button
             android:id="@+id/requestdetailsbtn"
-            android:background="@android:color/holo_orange_dark"
+            android:background="@drawable/button_view_details"
             android:textColor="@android:color/white"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:text="View Details" />
