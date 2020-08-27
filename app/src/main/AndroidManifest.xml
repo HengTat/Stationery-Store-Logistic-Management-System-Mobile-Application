@@ -14,6 +14,8 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".LoadingRequestSubmission"></activity>
         <activity android:name=".loadingforacknowledgement" />
+        <activity android:name=".loadingforrejectrequest"/>
+        <activity android:name=".loadingforapproverequest" />
         <activity android:name=".ViewRequestDetails" />
         <activity android:name=".ViewPendingRequests" />
         <activity android:name=".ClerkHomepage" />
