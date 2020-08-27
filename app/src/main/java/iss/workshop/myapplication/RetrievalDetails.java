@@ -129,26 +129,30 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
 
                             TextView tvDesc = new TextView(getApplicationContext());
                             tvDesc.setText(desc);
-                            tvDesc.setTextSize(16);
+                            tvDesc.setTextSize(14);
+                            tvDesc.setWidth(150);
+                            tvDesc.setHeight(150);
                             tvDesc.setGravity(Gravity.CENTER);
                             row.addView(tvDesc);
 
                             TextView tvBin = new TextView(getApplicationContext());
                             tvBin.setText(bin);
-                            tvBin.setTextSize(16);
+                            tvBin.setTextSize(14);
+                            tvBin.setWidth(50);
                             tvBin.setGravity(Gravity.CENTER);
                             row.addView(tvBin);
 
                             TextView tvQtyRequested = new TextView(getApplicationContext());
                             tvQtyRequested.setText(String.valueOf(qtyNeeded));
-                            tvQtyRequested.setTextSize(16);
+                            tvQtyRequested.setTextSize(14);
+                            tvBin.setWidth(80);
                             tvQtyRequested.setGravity(Gravity.CENTER);
                             row.addView(tvQtyRequested);
 
                             EditText etActualRetrieved = new EditText(getApplicationContext());
                             etActualRetrieved.setInputType(InputType.TYPE_CLASS_NUMBER);
                             etActualRetrieved.setText(Integer.toString(qtyNeeded));
-                            etActualRetrieved.setTextSize(16);
+                            etActualRetrieved.setTextSize(14);
                             etActualRetrieved.setGravity(Gravity.CENTER);
                             etActualRetrieved.setId(retId);
                             row.addView(etActualRetrieved);

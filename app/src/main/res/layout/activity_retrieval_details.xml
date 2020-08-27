@@ -36,39 +36,51 @@
         android:text="Description"
         app:layout_constraintBottom_toBottomOf="@id/headerbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:layout_width="88dp"
+        android:layout_width="80dp"
         android:layout_height="36dp"
         android:gravity="center"
-        android:text="Actual Received"
+        android:text="Qty Retrieved"
         app:layout_constraintBottom_toBottomOf="@id/headerbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:layout_width="49dp"
+        android:layout_width="70dp"
         android:layout_height="38dp"
         android:gravity="center"
         android:text="Qty Needed"
         app:layout_constraintBottom_toBottomOf="@id/headerbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="109dp"
+        android:layout_width="wrap_content"
         android:layout_height="37dp"
         android:gravity="center"
         android:text="Bin"
         app:layout_constraintBottom_toBottomOf="@id/headerbox"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/retrievalId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Retrieval Id:"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtRetId"
@@ -77,16 +89,20 @@
         android:layout_marginTop="16dp"
         android:text="Retrieval Id"
         android:textSize="18dp"
+        app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/retrievalId"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="277dp">
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="277dp"
+        tools:ignore="MissingConstraints">
+
 
         <TableLayout
             android:id="@+id/tblRetDetails"
