@@ -239,6 +239,4 @@ public class SubmitRequest extends AppCompatActivity implements View.OnClickList
         Map<Object, Boolean> seen = new ConcurrentHashMap<>();
         return t -> seen.putIfAbsent(keyExtractor.apply(t), Boolean.TRUE) == null;
         }
-
-
 }

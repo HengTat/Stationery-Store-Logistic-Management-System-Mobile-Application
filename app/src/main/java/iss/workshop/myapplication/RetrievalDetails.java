@@ -1,9 +1,11 @@
 package iss.workshop.myapplication;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.View;
@@ -205,20 +207,30 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
             final JsonArrayRequest requestArray=new JsonArrayRequest(Request.Method.POST, base_url, retDetailsArray, new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray response) {
-                    Toast.makeText(getApplicationContext(), "Saved Successfully!",Toast.LENGTH_LONG).show();
+/*                    Toast.makeText(getApplicationContext(), "Saved Successfully!",Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(RetrievalDetails.this,ClerkRetrieval.class);
                     finish();
-                    startActivity(intent);
+                    startActivity(intent);*/
+                    final Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(RetrievalDetails.this, loadingRetrievedQtyUpdate.class);
+                            startActivity(i);
+                            ((Activity)RetrievalDetails.this).finish();
+                        }
+                    },1800);
                 }
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getApplicationContext(), "Something is wrong. Check the input format!",Toast.LENGTH_LONG).show();
-                    Intent intent=new Intent(RetrievalDetails.this,ClerkRetrieval.class);
-                    startActivity(intent);
+                    Toast.makeText(getApplicationContext(), "Something is wrong. Check the input format and try again!",Toast.LENGTH_LONG).show();
+/*                    Intent intent=new Intent(RetrievalDetails.this,ClerkRetrieval.class);
+                    startActivity(intent);*/
                 }
             });
             Volley.newRequestQueue(getApplicationContext()).add(requestArray);
+
         }
     }
 }

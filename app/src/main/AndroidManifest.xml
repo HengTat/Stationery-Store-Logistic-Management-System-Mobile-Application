@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoadingRequestSubmission"></activity>
+        <activity android:name=".loadingRetrievedQtyUpdate"></activity>
+        <activity android:name=".LoadingRequestSubmission" />
         <activity android:name=".loadingforacknowledgement" />
-        <activity android:name=".loadingforrejectrequest"/>
+        <activity android:name=".loadingforrejectrequest" />
         <activity android:name=".loadingforapproverequest" />
         <activity android:name=".ViewRequestDetails" />
         <activity android:name=".ViewPendingRequests" />
