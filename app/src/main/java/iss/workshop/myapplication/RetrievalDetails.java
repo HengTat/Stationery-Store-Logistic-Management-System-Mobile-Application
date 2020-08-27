@@ -126,11 +126,6 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-/*                            TextView tvItemCode = new TextView(getApplicationContext());
-                            tvItemCode.setText(itemId);
-                            tvItemCode.setBackgroundResource(R.drawable.border);
-                            tvItemCode.setGravity(Gravity.CENTER);
-                            row.addView(tvItemCode);*/
 
                             TextView tvDesc = new TextView(getApplicationContext());
                             tvDesc.setText(desc);
@@ -152,7 +147,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
 
                             EditText etActualRetrieved = new EditText(getApplicationContext());
                             etActualRetrieved.setInputType(InputType.TYPE_CLASS_NUMBER);
-                            etActualRetrieved.setText(Integer.toString(qtyRetrieved));
+                            etActualRetrieved.setText(Integer.toString(qtyNeeded));
                             etActualRetrieved.setTextSize(16);
                             etActualRetrieved.setGravity(Gravity.CENTER);
                             etActualRetrieved.setId(retId);
