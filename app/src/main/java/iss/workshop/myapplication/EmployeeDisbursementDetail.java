@@ -171,7 +171,7 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                                             RequestQueue requestQueue = Volley.newRequestQueue(EmployeeDisbursementDetail.this);
                                             requestQueue.add(postRequest);
 
-                                            Toast.makeText(getApplicationContext(), "Disbursement has been confirmed !", Toast.LENGTH_LONG).show();
+
                                             EmployeeDisbursementList.getInstance().finish();
 
 
@@ -179,11 +179,11 @@ public class EmployeeDisbursementDetail extends AppCompatActivity {
                                             handler.postDelayed(new Runnable() {
                                                 @Override
                                                 public void run() {
-                                                    Intent i = new Intent(EmployeeDisbursementDetail.this,EmployeeDisbursementList.class);
+                                                    Intent i = new Intent(EmployeeDisbursementDetail.this,loadingforacknowledgement.class);
                                                     startActivity(i);
                                                     ((Activity)EmployeeDisbursementDetail.this).finish();
                                                 }
-                                            }, 1200);
+                                            }, 1800);
                                         }
                                     });
                                 } catch (JsonProcessingException e) {

@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="iss.workshop.myapplication">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ViewRequestDetails"/>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".loadingforacknowledgement"></activity>
+        <activity android:name=".ViewRequestDetails" />
         <activity android:name=".ViewPendingRequests" />
-        <activity android:name=".ClerkHomepage"/>
-        <activity android:name=".DepartmentHeadHomepage"/>
-        <activity android:name=".EmployeeHomepage"/>
-        <activity android:name=".DepartmentRepHomepage"/>
-        <activity android:name=".SubmitRequest"/>
-        <activity android:name=".ClerkRetrieval"/>
-        <activity android:name=".RetrievalDetails"/>
-        <activity android:name=".DisbursementListSelectDate"></activity>
+        <activity android:name=".ClerkHomepage" />
+        <activity android:name=".DepartmentHeadHomepage" />
+        <activity android:name=".EmployeeHomepage" />
+        <activity android:name=".DepartmentRepHomepage" />
+        <activity android:name=".SubmitRequest" />
+        <activity android:name=".ClerkRetrieval" />
+        <activity android:name=".RetrievalDetails" />
+        <activity android:name=".DisbursementListSelectDate" />
         <activity android:name=".EmployeeDisbursementDetail" />
         <activity android:name=".EmployeeDisbursementList" />
         <activity android:name=".ClerkDisbursementDetail" />
