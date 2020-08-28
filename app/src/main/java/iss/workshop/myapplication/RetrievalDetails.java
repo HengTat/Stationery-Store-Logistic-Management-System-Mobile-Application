@@ -64,22 +64,22 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                     @Override
                     public void onResponse(JSONArray response) {
 
-                        TextView rtId=findViewById(R.id.txtRetId);
+                        TextView rtId=findViewById(R.id.retrievalId);
                         rtId.setText(Integer.toString(retId));
 
                         TableLayout tblRetDetails = (TableLayout) findViewById(R.id.tblRetDetails);
 
-                        TableRow header_row = new TableRow(getApplicationContext());
+/*                        TableRow header_row = new TableRow(getApplicationContext());
                         TableRow.LayoutParams lp1 = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
                         header_row.setLayoutParams(lp1);
 
-/*                        TextView head_itemCode=new TextView(getApplicationContext());
+                        TextView head_itemCode=new TextView(getApplicationContext());
                         head_itemCode.setText("Item Code");
                         head_itemCode.setTextSize(18);
                         head_itemCode.setTypeface(null, Typeface.BOLD);
                         head_itemCode.setBackgroundResource(R.drawable.border);
                         head_itemCode.setGravity(Gravity.CENTER);
-                        header_row.addView(head_itemCode);*/
+                        header_row.addView(head_itemCode);
 
                         TextView head_desc=new TextView(getApplicationContext());
 
@@ -106,7 +106,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                         head_actual.setGravity(Gravity.CENTER);
                         header_row.addView(head_actual);
 
-                        tblRetDetails.addView(header_row,0);
+                        tblRetDetails.addView(header_row,0);*/
 
 
                         for (int i = 0; i < response.length(); i++) {
@@ -127,10 +127,18 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                                 e.printStackTrace();
                             }
 
+                            TextView tvItemCode = new TextView(getApplicationContext());
+                            tvItemCode.setText(itemId);
+                            tvItemCode.setTextSize(14);
+                            tvItemCode.setWidth(180);
+                            tvItemCode.setHeight(150);
+                            tvItemCode.setGravity(Gravity.CENTER);
+                            row.addView(tvItemCode);
+
                             TextView tvDesc = new TextView(getApplicationContext());
                             tvDesc.setText(desc);
                             tvDesc.setTextSize(14);
-                            tvDesc.setWidth(150);
+                            tvDesc.setWidth(330);
                             tvDesc.setHeight(150);
                             tvDesc.setGravity(Gravity.CENTER);
                             row.addView(tvDesc);
@@ -138,14 +146,14 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                             TextView tvBin = new TextView(getApplicationContext());
                             tvBin.setText(bin);
                             tvBin.setTextSize(14);
-                            tvBin.setWidth(50);
+                            tvBin.setWidth(150);
                             tvBin.setGravity(Gravity.CENTER);
                             row.addView(tvBin);
 
                             TextView tvQtyRequested = new TextView(getApplicationContext());
                             tvQtyRequested.setText(String.valueOf(qtyNeeded));
                             tvQtyRequested.setTextSize(14);
-                            tvBin.setWidth(80);
+                            tvQtyRequested.setWidth(200);
                             tvQtyRequested.setGravity(Gravity.CENTER);
                             row.addView(tvQtyRequested);
 
@@ -153,11 +161,12 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                             etActualRetrieved.setInputType(InputType.TYPE_CLASS_NUMBER);
                             etActualRetrieved.setText(Integer.toString(qtyNeeded));
                             etActualRetrieved.setTextSize(14);
+                            etActualRetrieved.setWidth(200);
                             etActualRetrieved.setGravity(Gravity.CENTER);
                             etActualRetrieved.setId(retId);
                             row.addView(etActualRetrieved);
                             row.setTag(currRetDetId);
-                            tblRetDetails.addView(row,i+1);
+                            tblRetDetails.addView(row,i);
 
                         }
                     }
@@ -184,8 +193,8 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
             for(int i=1;i<table.getChildCount();i++){
                 TableRow tableRow=(TableRow)table.getChildAt(i);
 
-                TextView txtRet=findViewById(R.id.txtRetId);
-                EditText actualCol=(EditText)tableRow.getChildAt(3);
+                TextView txtRet=findViewById(R.id.retrievalId);
+                EditText actualCol=(EditText)tableRow.getChildAt(4);
                 int retrieveId=Integer.parseInt(txtRet.getText().toString());
                 int retDetailsId= (int) tableRow.getTag();
                 String stringActualQty=actualCol.getText().toString();
