@@ -153,7 +153,7 @@ public class RetrievalDetails extends AppCompatActivity implements View.OnClickL
                             TextView tvQtyRequested = new TextView(getApplicationContext());
                             tvQtyRequested.setText(String.valueOf(qtyNeeded));
                             tvQtyRequested.setTextSize(14);
-                            tvQtyRequested.setWidth(200);
+                            tvQtyRequested.setWidth(180);
                             tvQtyRequested.setGravity(Gravity.CENTER);
                             row.addView(tvQtyRequested);
 

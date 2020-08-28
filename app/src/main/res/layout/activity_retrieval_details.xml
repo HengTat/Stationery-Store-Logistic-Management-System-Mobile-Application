@@ -59,7 +59,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="Qty Needed"
+            android:text="Qty   Needed"
             android:textStyle="bold"/>
 
         <TextView
@@ -77,24 +77,35 @@
         android:layout_height="wrap_content"
         android:padding="5dp">
 
-        <TableLayout
-            android:id="@+id/tblRetDetails"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        </TableLayout>
+            <TableLayout
+                android:id="@+id/tblRetDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="198dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_submissions"
+                android:text="Submit"
+                android:textColor="	#FFFFFF"/>
+
+        </LinearLayout>
     </ScrollView>
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
-        <Button
-            android:id="@+id/btnSubmit"
-            android:layout_width="198dp"
-            android:layout_height="48dp"
-            android:background="@drawable/button_submissions"
-            android:text="Submit"
-            android:textColor="	#FFFFFF"/>
+
 
     </RelativeLayout>
 </LinearLayout>
