@@ -38,54 +38,6 @@ public class InventoryItem {
         this.description = description;
     }
 
-    public String getBin() {
-        return bin;
-    }
-
-    public void setBin(String bin) {
-        this.bin = bin;
-    }
-
-    public int getRequestQty() {
-        return requestQty;
-    }
-
-    public void setRequestQty(int requestQty) {
-        this.requestQty = requestQty;
-    }
-
-    public int getQtyInStock() {
-        return qtyInStock;
-    }
-
-    public void setQtyInStock(int qtyInStock) {
-        this.qtyInStock = qtyInStock;
-    }
-
-    public int getReorderLevel() {
-        return reorderLevel;
-    }
-
-    public void setReorderLevel(int reorderLevel) {
-        this.reorderLevel = reorderLevel;
-    }
-
-    public int getReorderQty() {
-        return reorderQty;
-    }
-
-    public void setReorderQty(int reorderQty) {
-        this.reorderQty = reorderQty;
-    }
-
-    public String getUom() {
-        return uom;
-    }
-
-    public void setUom(String uom) {
-        this.uom = uom;
-    }
-
     public ItemCategory getItemCategory() {
         return itemCategory;
     }
