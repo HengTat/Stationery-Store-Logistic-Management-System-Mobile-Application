@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import iss.workshop.myapplication.Model.RequestDetails;
+//AUTHOR: NGUI KAI LIN
 
 public class ViewRequestDetailsAdapter extends ArrayAdapter<RequestDetails> {
     private Context context;

@@ -1,5 +1,6 @@
 package iss.workshop.myapplication.Model;
 
+//AUTHOR: LENG CHUNG HIANG
 public class CustomEmployeeMobile  {
     private int id;
     private String email;

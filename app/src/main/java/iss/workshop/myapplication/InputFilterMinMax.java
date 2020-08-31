@@ -2,7 +2,7 @@ package iss.workshop.myapplication;
 
 import android.text.InputFilter;
 import android.text.Spanned;
-
+//AUTHOR: JAMES FOO
 public class InputFilterMinMax implements InputFilter {
     private int min, max;
 

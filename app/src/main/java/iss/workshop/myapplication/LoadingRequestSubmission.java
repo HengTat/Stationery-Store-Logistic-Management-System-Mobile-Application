@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+//AUTHOR: CHONG HENG TAT, JAMES FOO
 
 public class LoadingRequestSubmission extends AppCompatActivity {
 

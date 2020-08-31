@@ -50,6 +50,7 @@ import java.util.stream.Stream;
 import iss.workshop.myapplication.Model.InventoryItem;
 import iss.workshop.myapplication.Model.ItemCategory;
 
+//AUTHOR: JAMES FOO
 public class SubmitRequest extends AppCompatActivity implements View.OnClickListener {
     Spinner spinner1;
     Spinner spinner2;

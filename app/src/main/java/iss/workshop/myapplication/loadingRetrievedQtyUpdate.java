@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+//AUTHOR: CHONG HENG TAT, YADANAR PHYO
 
 public class loadingRetrievedQtyUpdate extends AppCompatActivity {
 

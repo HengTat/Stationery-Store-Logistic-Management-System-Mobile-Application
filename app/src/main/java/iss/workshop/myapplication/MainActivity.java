@@ -30,6 +30,7 @@ import java.util.Map;
 
 import iss.workshop.myapplication.Model.CustomEmployeeMobile;
 import iss.workshop.myapplication.Model.InventoryItem;
+//AUTHOR: LENG CHUNG HIANG
 
 public class MainActivity extends AppCompatActivity {
     //for api testing

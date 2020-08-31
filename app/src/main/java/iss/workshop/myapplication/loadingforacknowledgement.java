@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+//AUTHOR: CHONG HENG TAT
 
 public class loadingforacknowledgement extends AppCompatActivity {
 

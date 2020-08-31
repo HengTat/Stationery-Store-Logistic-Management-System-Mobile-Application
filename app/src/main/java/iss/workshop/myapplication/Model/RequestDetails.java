@@ -1,5 +1,5 @@
 package iss.workshop.myapplication.Model;
-
+//AUTHOR: NGUI KAI LIN
 public class RequestDetails {
     private int requestId;
     private String description;

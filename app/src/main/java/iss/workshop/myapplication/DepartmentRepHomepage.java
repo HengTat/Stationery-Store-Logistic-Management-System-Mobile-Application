@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+//AUTHOR:  THUN SU NYI NYI
 public class DepartmentRepHomepage extends AppCompatActivity implements View.OnClickListener
 {
     Button Logout;

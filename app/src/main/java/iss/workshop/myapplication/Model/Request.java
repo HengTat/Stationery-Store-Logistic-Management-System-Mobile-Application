@@ -2,6 +2,8 @@ package iss.workshop.myapplication.Model;
 
 import androidx.annotation.NonNull;
 
+//AUTHOR: NGUI KAI LIN
+
 public class Request {
     private int Id;
 

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import iss.workshop.myapplication.Model.Request;
+//AUTHOR: NGUI KAI LIN
 
 public class ViewPendingRequestsAdapter extends ArrayAdapter<Request> {
     private Context context;

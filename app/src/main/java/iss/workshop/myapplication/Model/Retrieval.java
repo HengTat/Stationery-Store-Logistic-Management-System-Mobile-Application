@@ -1,7 +1,7 @@
 package iss.workshop.myapplication.Model;
 
 import java.util.Date;
-
+//AUTHOR: YADANAR PHYO, THUN SU NYI NYI
 public class Retrieval {
     private int Id;
     private Date DateRetrieved;

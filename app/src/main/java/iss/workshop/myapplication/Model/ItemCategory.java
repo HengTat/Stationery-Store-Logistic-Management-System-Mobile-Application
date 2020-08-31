@@ -1,5 +1,7 @@
 package iss.workshop.myapplication.Model;
 
+//AUTHOR: JAMES FOO
+
 public class ItemCategory {
     private int id;
     private String name;

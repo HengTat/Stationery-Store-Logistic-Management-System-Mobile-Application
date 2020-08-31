@@ -1,5 +1,6 @@
 package iss.workshop.myapplication.Model;
 
+//AUTHOR: JAMES FOO
 public class InventoryItem {
 
     private String id;
