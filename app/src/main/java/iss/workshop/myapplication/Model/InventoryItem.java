@@ -6,12 +6,7 @@ public class InventoryItem {
     private String id;
     private int itemCateggoryId;
     private String description;
-    private String bin;
-    private int requestQty;
-    private int qtyInStock;
-    private int reorderLevel;
-    private int reorderQty;
-    private String uom;
+    
     private ItemCategory itemCategory;
 
     public String getId() {
